@@ -11,14 +11,24 @@
   </head>
 
   <body>
+<nav>
+<%= link_to "Home", root_path %>
+<%= link_to "Browse", "listings" %>
+<%= link_to "FAQ", "/faq" %>
+<% if user_signed_in?%>
+  <%= link_to "Sign out", destroy_user_session_path, method:"delete" %>
+<% else %>
+  <%= link_to "Sign in", "/users/sign_in" %>
+<%end%>
+</nav>
+
   <% if notice %>
     <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
+  <% elsif alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
   <%= yield %>
-  
+
   </body>
 </html>
