@@ -13,7 +13,7 @@
   <body>
 <nav>
 <%= link_to "Home", root_path %>
-<%= link_to "Browse", "listings" %>
+<%= link_to "Browse", "/listings" %>
 <%= link_to "FAQ", "/faq" %>
 <% if user_signed_in?%>
   <%= link_to "Sign out", destroy_user_session_path, method:"delete" %>
