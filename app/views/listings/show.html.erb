@@ -15,6 +15,13 @@
   <%= @listing.price %>
 </p>
 
+<% if @listing.photo.attached? %>
+  <p>
+    <strong>Photo:</strong>
+    <%= image_tag @listing.photo %>
+  </p>
+<% end %>
+
 <p>
   <strong>Sold:</strong>
   <%= @listing.sold %>

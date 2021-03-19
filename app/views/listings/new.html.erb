@@ -1,5 +1,9 @@
 <h1>New Listing</h1>
 
-<%= render 'form', listing: @listing %>
+<%if user_signed_in?%>
+    <%= render 'form', listing: @listing %>
 
-<%= link_to 'Back', listings_path %>
+    <%= link_to 'Back', listings_path %>
+<%else%>
+    <h3>Please sign in to create a listing</h3>
+<%end%>
