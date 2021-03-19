@@ -11,9 +11,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-<nav>
-<%= link_to "Home", root_path, class: 'text-green-500' %>
+  <body class="min-h-screen bg-gray-100">
+<nav class="bg-gray-800">
+<%= link_to "Home", root_path %>
 <%= link_to "Browse", "/listings" %>
 <%= link_to "FAQ", "/faq" %>
 <% if user_signed_in?%>
