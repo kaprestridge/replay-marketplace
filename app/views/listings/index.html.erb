@@ -8,6 +8,7 @@
       <th>Title</th>
       <th>Description</th>
       <th>Price</th>
+      <th>Image</th>
       <th>Sold</th>
       <th colspan="3"></th>
     </tr>
@@ -19,6 +20,14 @@
         <td><%= listing.title %></td>
         <td><%= listing.description %></td>
         <td><%= listing.price %></td>
+        <td>
+        <% if listing.photo.attached? %>
+          <p>
+            <strong>Photo:</strong>
+            <%= image_tag listing.photo %>
+          </p>
+        <% end %>
+        </td>
         <td><%= listing.sold %></td>
         <td><%= link_to 'Show', listing %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
