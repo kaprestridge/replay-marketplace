@@ -1,0 +1,23 @@
+<h2 class="text-5xl font-normal leading-normal mt-0 mb-2 text-gray-800">
+    Search Results
+</h2>
+
+
+    <% @results.each do |result| %> 
+        <h5 class="text-2xl font-normal leading-normal mt-0 mb-2 text-gray-800">
+            <%= result.title %>
+        </h5>
+        <button class="bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+            <%= link_to 'Show', result %>
+        </button>
+        
+        <br> 
+    <% end %>
+
+<%# TODO add 'no results found' logic %>
+
+<%# <h5 class="text-2xl font-normal leading-normal mt-0 mb-2 text-gray-800">
+    No results found
+</h5> %>
+
+
