@@ -14,9 +14,9 @@
 <% end %>
 
 
-<div class="flex">
+<div class="flex flex-wrap">
     <% @listings.each do |listing| %>
-      <div>
+      <div class="flex-column object-center object-contain">
           <%= listing.title %><br>
           $<%= listing.price %>
           <% if listing.photo.attached? %>
