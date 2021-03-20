@@ -1,5 +1,17 @@
-<h1>Welcome to Replay</h1>
-<h2>A marketplace for board games to have a second chance at play<h2>
-<%= link_to "Buy", '/listings' %>
-<%= link_to "Sell", '/listings/new' %>
-<%= link_to "Play", '/meetups' %>
+<h1 class="text-6xl font-normal leading-normal mt-0 mb-2 text-gray-800">
+  Welcome to Reply
+</h1>
+<h4 class="text-3xl font-normal leading-normal mt-0 mb-2 text-gray-800">
+  A marketplace for board games to have a second chance at play
+</h4>
+<button class="text-gray-500 bg-transparent border border-solid border-gray-500 hover:bg-gray-500 hover:text-white active:bg-gray-600 font-bold uppercase px-8 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+  <%= link_to "Buy", '/listings' %>
+</button>
+<button class="text-gray-500 bg-transparent border border-solid border-gray-500 hover:bg-gray-500 hover:text-white active:bg-gray-600 font-bold uppercase px-8 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+  <%= link_to "Sell", '/listings/new' %>
+</button>
+<button class="text-gray-500 bg-transparent border border-solid border-gray-500 hover:bg-gray-500 hover:text-white active:bg-gray-600 font-bold uppercase px-8 py-3 rounded outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+  <%= link_to "Play", '/meetups' %>
+</button>
+
+
