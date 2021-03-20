@@ -2,13 +2,11 @@
 
 <h1>Listings</h1>
 
-<%= form_tag(search_page_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
-  <div class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-          type="search" name="search" placeholder="Search" >  
-    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+<%= form_tag(search_page_path, :method => "get") do %>  
+  <div>  
+    <%= search_field_tag :search, params[:search], placeholder: "Search" %>  
+    <div>  
+      <%= button_tag "Search"%>  
     </div>  
   </div>  
 <% end %>

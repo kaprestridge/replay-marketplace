@@ -60,7 +60,7 @@ class ListingsController < ApplicationController
 
   def search  
     if params[:search].blank?  
-      redirect_to(root_path, alert: "Empty field!") and return  
+      redirect_to('/listings', alert: "Empty field!") and return  
     else  
       @parameter = params[:search].downcase  
       @results = Listing.all.where("lower(title) LIKE :search", search: "%#{@parameter}%")  
