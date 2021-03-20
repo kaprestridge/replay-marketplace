@@ -1,36 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h2 class="text-5xl font-normal leading-normal mt-0 mb-2 text-gray-800">
   <%= @listing.title %>
-</p>
+</h2>
 
-<p>
-  <strong>Description:</strong>
+<h3 class="text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">
+  $<%= @listing.price %>
+</h3>
+
+<h3 class="text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">
   <%= @listing.description %>
-</p>
+</h3>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
 
 <% if @listing.photo.attached? %>
-  <p>
-    <strong>Photo:</strong>
+  <p class="object-contain w-4/6">
     <%= image_tag @listing.photo %>
   </p>
 <% end %>
 
-<p>
-  <strong>Sold:</strong>
-  <%= @listing.sold %>
-</p>
 
-<p>
-  <strong>Posted by:</strong>
-  <%= @listing.user.username %>
-</p>
+<h3 class="text-4xl font-normal leading-normal mt-0 mb-2 text-gray-800">
+  Sold by: <%= @listing.user.username %>
+</h3>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<% if user_signed_in? %>
+    <% if @listing.user.username == current_user.username %>
+
+        <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+          <%= link_to 'Edit', edit_listing_path(@listing) %>
+        </button>
+
+        <button class="bg-red-500 text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+          <%= link_to 'Delete', @listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </button>
+        
+    <%else%>
+      <button class="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+        BUY NOW
+      </button>
+    <% end %>
+<%else%>
+ Please sign in to purchace
+<% end %>
+
+
+<p><%= link_to 'Back', listings_path %></p>
+
+

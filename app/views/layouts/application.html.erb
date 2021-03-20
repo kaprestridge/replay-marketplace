@@ -11,13 +11,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="min-h-screen bg-gray-100">
+  <body class="min-h-screen bg-gray-100 overscroll-auto">
 <nav class="bg-gray-800 flex items-center ">
   <div class="flex items-center object-left">
 <%= image_tag("replay-logo-transperent-bg.png", class: "w-32 object-contain") %>
 <%= link_to "Replay", root_path %>
   </div>
-  <div class="object-right space-between">
+  <div class="object-right">
 <%= link_to "Browse", "/listings" %>
 <%= link_to "FAQ", "/faq" %>
 <% if user_signed_in?%>
